@@ -106,7 +106,11 @@ public:
         if (bEasyCam) {
             ecam.begin();
             ecam.end();
-            cam.setTransformMatrix(ecam.getGlobalTransformMatrix());
+            //cam.setTransformMatrix(ecam.getGlobalTransformMatrix());
+            cam.setFov(ecam.getFov());
+            cam.setGlobalOrientation(ecam.getGlobalOrientation());
+            cam.setGlobalPosition(ecam.getGlobalPosition());
+    
         } else {
             int frame = ofGetFrameNum();
             

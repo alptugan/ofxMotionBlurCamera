@@ -35,8 +35,8 @@ void ofxMotionBlurCamera::setup(int width, int height, int internalformat, float
     fbo_velocity.allocate(width, height, GL_RG8);
     fbo_tile_max.allocate(width / k, height / k, GL_RG8);
     fbo_neighbor_max.allocate(width / k, height / k, GL_RG8);
-    fbo_tile_max.getTextureReference().setTextureMinMagFilter(GL_NEAREST, GL_NEAREST);
-    fbo_neighbor_max.getTextureReference().setTextureMinMagFilter(GL_NEAREST, GL_NEAREST);
+    fbo_tile_max.getTexture().setTextureMinMagFilter(GL_NEAREST, GL_NEAREST);
+    fbo_neighbor_max.getTexture().setTextureMinMagFilter(GL_NEAREST, GL_NEAREST);
     fbo_out.allocate(width, height, internalformat);
     
     string velocity_frag_shader_str = STRINGIFY
